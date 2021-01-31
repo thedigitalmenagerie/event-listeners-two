@@ -201,3 +201,17 @@ const init = () => { // we want to call pieBuilder and pass it the argument of p
 }
 
 init();
+
+// .forEach
+
+// const array = [1, 2, 3, 4, 5, 6];
+
+// [1, 2, 3, 4, 5, 6].forEach((item)) => {
+//   console.log(item, i);
+// }
+
+// // in a for loop it would look like this
+
+// for (let i = 0; i < array.length; i ++) {
+//   console.log(array[i]);
+// }
