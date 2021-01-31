@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pies</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="container mt-3 text-center">
+      <div id="instructor-buttons">
+        <!-- notation for spacings on the parent container of button container is affecting the buttons below -->
+        <button type="button" class="btn btn-primary" id="All">All</button> 
+        <button type="button" class="btn btn-secondary" id ="Doc">Dr. T</button>
+        <button type="button" class="btn btn-success" id ="Aja">Aja</button>
+        <button type="button" class="btn btn-danger" id="Trinity">Trinity</button>  
+      </div>
+      <div id="pies" class="d-flex flex-wrap justify-content-around"></div>
+      <!-- bootstrap classes adding styling to flex wrap and space around NO CSS -->
+      <hr>
+      <div class="pie-form mb-5">
+        <h2 class="text-center">Add A Pie</h2>
+        <form id="pie-form">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="ingredients" class="form-label">Ingredients</label>
+            <input type="text" class="form-control" id="ingredients" required>
+          </div>
+          <div class="mb-3">
+            <label for="bakeTemp" class="form-label">Bake Temp</label>
+            <input type="number" class="form-control" id="bakeTemp" required>
+          </div>
+          <div class="mb-3">
+            <label for="drinkPairing" class="form-label">Drink Pairing</label>
+            <input type="text" class="form-control" id="drinkPairing" required>
+          </div>
+          <div class="mb-3">
+            <label for="imageUrl" class="form-label">Image Url</label>
+            <input type="url" class="form-control" id="imageUrl" required>
+          </div>
+          <div class="mb-3">
+            <label for="instructor" class="form-label">Instructor</label>
+            <select id="instructor" class="form-select" aria-label="Default select example" required>
+              <option value="">Select an Instructor</option>
+              <option value="Doc">Dr. T</option>
+              <option value="Aja">Aja</option>
+              <option value="Trinity">Trinity</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="iceCream" class="form-label">Ice Cream</label>
+            <input type="text" class="form-control" id="iceCream" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="main.js" async defer></script>
+  </body>
+</html>
