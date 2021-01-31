@@ -76,9 +76,9 @@ const pies = [
 
 // print to DOM function // pie builder
 
-const pies = [
+// const pies = [
   
-];
+// ];
 
 // what do we need when we are targeting on the DOM-- ID
 
@@ -169,16 +169,29 @@ const getFormInfo = (e) => {
 
 }
 
+const deletePie = (e) => {
+  const targetType = e.targt.type;
+    const targetId = e.target.id;
+
+    if (targetType === 'button') { // deleteing the pie from the array but not from the dom
+      pies.splice(targetId, 1);
+    } 
+    pieBuilder(pies); // deleting from the dom
+
+  }
+
 const buttonEvents = () => {
   document.querySelector('#All').addEventListener('click', handleButtonClick); //  instead of const allBtn and adding event listener seperate
   document.querySelector('#Doc').addEventListener('click', handleButtonClick); // ""
   document.querySelector('#Aja').addEventListener('click', handleButtonClick); // ""
   document.querySelector('#Trinity').addEventListener('click', handleButtonClick); // ""
-  document.querySelector('form').addEventListener('submit', getFormInfo); // submit default behavior is for the page to reload and to prevent the default behavior is
+  // submit default behavior is for the page to reload and to prevent the default behavior is
+  document.querySelector('#pies').addEventListener('click', deletePie )
+    
   // passing a function through event listener is a callback function
   // chaining is the ability to do something and add another method on the end as seen above
   // allBtn.addEventListener('click', handleButtonClick); // this gets chained to the end of the query selector and the const allBtn and allBtn before event listener etc gets removed 
-
+  document.querySelector('form').addEventListener('submit', getFormInfo); 
 }
 // we usually wrap calling the function in a function called init (short for initialize)
 
