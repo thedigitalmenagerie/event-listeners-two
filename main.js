@@ -1,63 +1,77 @@
-console.log('CONNECTED');
 
-// curly braces and key value pairs, can be empty
+// dom -- document object model // global object // what makes everything show in the browser // document that makes the model for the driver
 
-const firstObj = {};
+// something happens === manipulating the dom
 
-const user = {
-  username: 'biz.markie', // seperated by comma
-  password: 'abd123',
-  lovesJavaScript: true,
-  favoriteNumber: 42, // final trailing comma required
-}
+// callbacks-- calling a function based on a user action that cues the start
 
-// accessing values inside an object
-//dot notation-- sometimes doesn't work
-console.log(user.lovesJavascript);
-console.log(user.username);
-// bracket notation
-console.log(user['username']); // must be a string or a number
-// both ways
-console.log(user['favoriteNumber']); // = 42
-console.log(user.favoriteNumber); // also 42
+// event-listeners-- events that happen on the browser that the dom is listening for
 
-// assigning values after object is declared/ assigned // reassignment
+// bootstrap-- css library with built in html and css for quicker development
 
-const newUser = {
-  isNew: true,
-}
+// method getElementById to add functionality in JS
 
-// newUser.username = 'fresh.prince'; // dot notation
-// newUser['password'] = 'abcd1234'; // bracket notation
-// newUser[1] = 5; // would come first in console log number then alphabetical order
-// console.log(newUser); // logs the new object with the additional key value pairs
+// const div = document.getElementById('divId'); // selector that passes the id of the element (id) we want to target from html as a string
 
-// can manipulate just like arrays with pull pop push etc.
+// document selectors
 
-// methods-- functions as value for a key
+// const button = document.getElementById('main-btn');
 
-const newObj = { // anonymous function-- save methods on objects (functions) w/ kvp in order to call function, assign function as value, call function
-  username: 'Honey-Rae',
-  sayHello: function () { // function keyword-- assigning function to a key inside of an object 
-    console.log(`${this.username} says Hello`) ;// how to access method on this object-- dot or bracket like in other key value pair w/ parentheses bc it is a function
-  } // temperate literal must be in back ticks
-}
-// newObject.username = 'Aja'; // logs Aja says hello because this is reassigning the value inside of the object (which can be updated because they are muteable)
-// newObj.sayHello(); // invoking the function with values inside of the object
+// console.log(button);
 
-// iterate over each key value pair in object (see what is inside of the object) uses for in loop
+// document.querySelector 
 
-const userTwo = {
-  username: 'trinity.christiana',
-  password: 'xyz0987',
-  lovesJavaScript: true,
-  favoriteNumber: 12,
-}
+// const div = document.querySelector('#divId'); // can target classes or id and is the new way . for class instead of # 
+// will only get the first one and should be that way because you can only have specific ids
+// should not be using classes in js because ids are for js and classes are for css
 
-for (let key in userTwo) { // gives all keys in object
-  console.log(key);
-}
+// const button = document.querySelector('#main-btn');
 
-for (let key in userTwo) { 
-  console.log(userTwo[key]); // gives all values in object using bracket notation-- dot notation does not work in accessing values in an object method that is for in loop
-} // dot notation is go to and bracket is second choice if that doesn't work
+// console.log(button);
+
+// callbacks-- ability to pass a function as an argument to another function 
+//convention is to use cb argument variable as you callback
+
+// function saysHelloToUser(user) { // passing an argument and use argument inside the code block (user is arg)
+//   return `Hello ${user}!`;
+// }
+
+// function saysGoodbyeToUser(user) { // user === taco and is whatever we use to call taco
+//   return `Goodbye ${user}!`; // only difference is the return
+// }
+
+// // call back
+
+// function createGreeting (user, cb) { // user == taco/arg/placeholder 2nd arg is cb === taco/placeholder
+//   return cb(user); // a function can be passed as an argument in another function and that is a CB
+// }
+
+// // doesn't have to be invoked // it is being passed not invoking which would be inside of the code block
+
+// createGreeting('Dan', saysHelloToUser); // 'Hello Dan!'
+// createGreeting('Dan', saysGoodbyeToUser); // 'Goodbye Dan!'
+
+// create two functions that accept a string as an arg and returns a sentence using the argument
+
+// function one(string) {
+//   return `This is a ${string}.`;
+// }
+
+// function two(string) {
+//   return `This is a second ${string}.`;
+// }
+
+// // create a third function that accepts the two arguments (a string and a function) and returns the passed function with the string as the argument
+// // a function that takes a funtion in as an argument
+// function third(string, cb) {
+//   return cb(string);
+// }
+
+// // console.log the third function twice using the first two functions as arguments
+// //console logging the return statement of each callback
+
+// third('Dan', first); // format is accepting two arguments one as a function
+// third('Dan', second); // allows us to make code reusable by having one cb use multiple functions
+
+// // callbacks are used in DOM manipulation and events/ event-listeneres which are listening for functions and cb
+
