@@ -94,24 +94,41 @@ const printToDom = (divId, textToPrint) => { // what id i am targeting and what 
 const pieBuilder = (taco) => {
   let domString = ''; // what is domString
 
-  for (let i = 0; i < taco.length; i++) { // card element below inside card loop that adds this html element to the dom string
-    // the value of i the first time it loops through is 0 index i =0 
-    // taco (whichever object index we are at in the array) [i].key all contained in the card
-    // in order to print to the dom we need to call pieBuilder
-    // using html to add and reassign domString in a stylized way and interpolate several elements in each of the objects in the array
-    // array use for loop even when objects are contained as they are elements in the array and the objects contain key value pair
+  // for (let i = 0; i < taco.length; i++) { // card element below inside card loop that adds this html element to the dom string
+  //   // the value of i the first time it loops through is 0 index i =0 
+  //   // taco (whichever object index we are at in the array) [i].key all contained in the card
+  //   // in order to print to the dom we need to call pieBuilder
+  //   // using html to add and reassign domString in a stylized way and interpolate several elements in each of the objects in the array
+  //   // array use for loop even when objects are contained as they are elements in the array and the objects contain key value pair
+  //   domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
+  //   <div class="img-container" style="background-image: url('${taco[i].imageUrl}');"></div>
+  //   <div class="card-body">
+  //     <p class="card-text">${taco[i].name}</p>
+  //     <p class="card-text">${taco[i].ingredients}</p>
+  //     <p class="card-text">${taco[i].bakeTemp}</p>
+  //     <p class="card-text">${taco[i].drinkPairing}</p>
+  //     <p class="card-text">${taco[i].iceCream}</p>
+  //     <button type="button" class="btn btn-danger" id="${i}">Delete</button>
+  //   </div>
+  // </div>`;
+  // }
+  // replacing the code above with a for each loop
+  taco.forEach((item, i) => {
     domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
-    <div class="img-container" style="background-image: url('${taco[i].imageUrl}');"></div>
+    <div class="img-container" style="background-image: url('${item.imageUrl}');"></div>
     <div class="card-body">
-      <p class="card-text">${taco[i].name}</p>
-      <p class="card-text">${taco[i].ingredients}</p>
-      <p class="card-text">${taco[i].bakeTemp}</p>
-      <p class="card-text">${taco[i].drinkPairing}</p>
-      <p class="card-text">${taco[i].iceCream}</p>
+      <p class="card-text">${item.name}</p>
+      <p class="card-text">${item.ingredients}</p>
+      <p class="card-text">${item.bakeTemp}</p>
+      <p class="card-text">${item.drinkPairing}</p>
+      <p class="card-text">${item.iceCream}</p>
       <button type="button" class="btn btn-danger" id="${i}">Delete</button>
     </div>
   </div>`;
+  })
+
   }
+
   printToDom('#pies', domString);
 }
 
@@ -201,3 +218,17 @@ const init = () => { // we want to call pieBuilder and pass it the argument of p
 }
 
 init();
+
+// .forEach
+
+// const array = [1, 2, 3, 4, 5, 6];
+
+// [1, 2, 3, 4, 5, 6].forEach((item)) => {
+//   console.log(item, i);
+// }
+
+// // in a for loop it would look like this
+
+// for (let i = 0; i < array.length; i ++) {
+//   console.log(array[i]);
+// }
